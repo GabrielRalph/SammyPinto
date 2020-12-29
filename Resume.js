@@ -1,9 +1,6 @@
 class Experience extends SvgPlus{
   constructor(data){
     super('div');
-    this.props = {
-      class: "experiences"
-    }
     this.mode = "large";
     this.data = data;
   }
@@ -33,9 +30,6 @@ class Experience extends SvgPlus{
 class Education extends SvgPlus{
   constructor(data){
     super('div');
-    this.props = {
-      class: "education"
-    }
     this.mode = "large";
     this.data = data;
   }
@@ -65,9 +59,6 @@ class Education extends SvgPlus{
 class Project extends SvgPlus{
   constructor(data){
     super('div');
-    this.props = {
-      class: "projects"
-    }
     this.mode = "large";
     this.data = data;
   }
@@ -100,6 +91,9 @@ class Project extends SvgPlus{
 class List extends SvgPlus{
   constructor(header, list){
     super('div');
+    this.props = {
+      class: "list"
+    }
     this.header = `${header}`;
     this.list = list;
     this.expand = false;
@@ -123,6 +117,32 @@ class List extends SvgPlus{
         }
       }
     }
+  }
+}
+
+class Reference extends SvgPlus{
+  constructor(reference){
+    super('div');
+    this.data = reference;
+    this.props = {
+      class: "references"
+    }
+  }
+  set data(val){
+    if (typeof val !== "object") return;
+    if ("location" in val && typeof val.location === "string") this.location = val.location;
+    if ("number" in val && typeof val.number === "string") this.number = val.number;
+    if ("email" in val && typeof val.email === "string") this.email = val.email;
+    if ("role" in val && typeof val.role === "string") this.role = val.role;
+    if ("name" in val && typeof val.name === "string") this.name = val.name;
+    this.render();
+  }
+
+  render(){
+    this.innerHTML = "" + `<h3><b>${this.name}</b>, ${this.location} - <i>${this.role}</h3>
+                           <p>${this.email}<br />
+                           ${this.number}
+                           </p>`;
   }
 }
 
@@ -151,23 +171,23 @@ class Contacts extends SvgPlus{
 }
 
 class Resume extends SvgPlus{
-  constructor(person){
+  constructor(sammy){
     super('div');
-    this.person = person;
+    this.sammy = sammy;
   }
 
-  set person(person){
-    if(person instanceof Sammy){
-      this._person = person;
+  set sammy(sammy){
+    if(sammy instanceof Sammy){
+      this._sammy = sammy;
       this.render(this.mode)
     }
   }
-  get person(){
-    return this._person;
+  get sammy(){
+    return this._sammy;
   }
 
   renderExperiences(){
-    let list =  new List('Experiences', this.person.experiences);
+    let list =  new List('Experiences', this.sammy.experiences);
     list.elementParser = (experience) => {
       return new Experience(experience);
     }
@@ -176,7 +196,7 @@ class Resume extends SvgPlus{
   }
 
   renderProjects(){
-    let list =  new List('Projects', this.person.projects);
+    let list =  new List('Projects', this.sammy.projects);
     list.elementParser = (project) => {
       return new Project(project);
     }
@@ -185,7 +205,7 @@ class Resume extends SvgPlus{
   }
 
   renderEducation(){
-    let list =  new List('Education', this.person.education);
+    let list =  new List('Education', this.sammy.education);
     list.elementParser = (education) => {
       return new Education(education);
     }
@@ -193,8 +213,27 @@ class Resume extends SvgPlus{
     return list;
   }
 
+  renderReferences(){
+    let table = this.createChild('TABLE');
+    table.props = {
+      class: "references"
+    }
+    let tbody = table.createChild('TBODY');
+    tbody.createChild('TR').createChild('TD').createChild('H2').innerHTML = "Reference"
+
+    if (sammy.references.length == 0) return;
+
+    for (var i = 0; i < Math.floor(sammy.references.length/2); i++){
+      let row = tbody.createChild('TR');
+      let c1 = row.createChild('TD').appendChild(new Reference(sammy.references[i]));
+      if (i + 1 < sammy.references.length){
+        let c2 = row.createChild('TD').appendChild(new Reference(sammy.references[i]));
+      }
+    }
+  }
+
   renderList(listName, header, el){
-    let array = this.person[listName];
+    let array = this.sammy[listName];
     if (!(array instanceof Array)) return;
     let header_el = el.createChild('H2');
     header_el.innerHTML = header;
@@ -210,7 +249,7 @@ class Resume extends SvgPlus{
     let c1 = tr.createChild('TD');
     c1.createChild('H1').innerHTML = "Sammy Pinto";
     let c2 = tr.createChild('TD');
-    c2.appendChild(new Contacts(this.person.contacts))
+    c2.appendChild(new Contacts(this.sammy.contacts))
     tr = table.createChild('TR');
     c1 = tr.createChild('TD');
     c2 = tr.createChild('TD');
@@ -221,6 +260,7 @@ class Resume extends SvgPlus{
     this.renderList('filmRoles', 'Film Roles', c2);
     this.renderList('awards', 'Awards', c2);
     this.renderList('qualifications', 'Qualifications', c2);
-
+    this.renderReferences();
+    this.createChild('H6').innerHTML = "Designed & coded by Gabriel Ralph"
   }
 }
