@@ -1,0 +1,71 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script src="https://www.svg.plus/2.js"></script>
+  <script src="https://www.svg.plus/vector.js"></script>
+  <script src="./Resume.js"></script>
+  <script src="./Sammy.js"></script>
+  <title>Sammy Pinto</title>
+
+
+</head>
+
+<body>
+
+
+
+</body>
+<style>
+body{
+  font-family: "Arial";
+  font-size: 2vw;
+}
+h3{
+  font-size: 1em;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+p{
+  margin-top: 0.4em;
+  font-size: 0.8em;
+  color: grey;
+}
+
+.experiences, .projects{
+  margin-bottom: 2em;
+}
+td{
+  vertical-align: top;
+}
+tr td:last-of-type{
+  width: 30%;
+}
+body{
+  margin: 4em;
+}
+h4{
+  font-weight: 400;
+  margin: 0;
+  padding: 0.2em 0;
+}
+h2{
+  font-size: 1.3em;
+  cursor: pointer;
+}
+h5{
+  font-size: 1em;
+  margin: 0;
+  font-weight: 400;
+}
+body h1:first-of-type{
+  margin-top: 0;
+}
+</style>
+<script>
+  let sammy = new Sammy();
+  let resume = new Resume(sammy);
+  document.body.appendChild(resume)
+</script>
+</html>
