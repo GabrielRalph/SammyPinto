@@ -30,6 +30,38 @@ class Experience extends SvgPlus{
 
   }
 }
+class Education extends SvgPlus{
+  constructor(data){
+    super('div');
+    this.props = {
+      class: "education"
+    }
+    this.mode = "large";
+    this.data = data;
+  }
+
+  set data(val){
+    if (typeof val !== "object") return;
+    if ("title" in val && typeof val.title === "string") this.title = val.title;
+    if ("location" in val && typeof val.location === "string") this.location = val.location;
+    if ("qualifications" in val && typeof val.qualifications === "string") this.qualifications = val.qualifications;
+    if ("date" in val && typeof val.date === "string") this.date = val.date;
+    this.render();
+  }
+
+  render(){
+    this[this.mode]();
+  }
+
+  large(){
+    this.innerHTML = "";
+    this.innerHTML += `<h3>
+                          <b>${this.title}</b>, ${this.location} - <i>${this.qualifications}</i>
+                       </h3>
+                       <p>${this.date}</p>`;
+
+  }
+}
 class Project extends SvgPlus{
   constructor(data){
     super('div');
@@ -152,6 +184,15 @@ class Resume extends SvgPlus{
     return list;
   }
 
+  renderEducation(){
+    let list =  new List('Education', this.person.education);
+    list.elementParser = (education) => {
+      return new Education(education);
+    }
+    list.render();
+    return list;
+  }
+
   renderList(listName, header, el){
     let array = this.person[listName];
     if (!(array instanceof Array)) return;
@@ -168,11 +209,15 @@ class Resume extends SvgPlus{
     let tr = table.createChild('TR');
     let c1 = tr.createChild('TD');
     c1.createChild('H1').innerHTML = "Sammy Pinto";
-
-    c1.appendChild(this.renderExperiences());
-    c1.appendChild(this.renderProjects());
     let c2 = tr.createChild('TD');
     c2.appendChild(new Contacts(this.person.contacts))
+    tr = table.createChild('TR');
+    c1 = tr.createChild('TD');
+    c2 = tr.createChild('TD');
+
+    c1.appendChild(this.renderEducation());
+    c1.appendChild(this.renderExperiences());
+    c1.appendChild(this.renderProjects());
     this.renderList('filmRoles', 'Film Roles', c2);
     this.renderList('awards', 'Awards', c2);
     this.renderList('qualifications', 'Qualifications', c2);
