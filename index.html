@@ -38,7 +38,7 @@
       <tr>
         <td>
           <div class = "list">
-            <h2 @click = "educationShown = !educationShown">Eduaction<h2/>
+            <h2 @click = "educationShown = !educationShown">Eduaction</h2>
               <div class = "short-description" v-if= "educationShown" v-for = "edu in sammy.education">
                 <h3>
                   <b>{{edu.title}}({{edu.location}})</b> - <i>{{edu.qualifications}}</i>
@@ -48,7 +48,7 @@
           </div>
 
           <div class = "list">
-            <h2 @click = "experiencesShown = !experiencesShown">Experience<h2/>
+            <h2 @click = "experiencesShown = !experiencesShown">Experience</h2>
             <div class = "short-description" v-if= "experiencesShown" v-for = "experience in sammy.experiences">
               <h3>
                 <b>{{experience.title}}</b>, {{experience.location}} - <i>{{experience.role}}</i>
@@ -58,7 +58,7 @@
           </div>
 
           <div class = "list">
-            <h2 @click = "projectsShown = !projectsShown">Projects<h2/>
+            <h2 @click = "projectsShown = !projectsShown">Projects</h2>
             <div class = "short-description" v-if= "projectsShown" v-for = "project in sammy.projects">
               <h3>
                 <b>{{project.title}}({{project.date}})</b> - <i>{{project.role}}</i>
