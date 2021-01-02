@@ -1,5 +1,6 @@
-class Sammy{
-  references = [
+let Sammy = {
+  name: "Sammy Pinto",
+  references: [
     {
       name: "Stephen Potter",
       location: "Freda",
@@ -14,17 +15,24 @@ class Sammy{
       email: "mclennan.michael@gmail.com",
       number: "0432 085 370"
     }
-  ]
-
-  contacts = {
-    address: "St Peters, 2044<br />Sydney NSW",
+  ],
+  contacts: {
+    address: "St Peters, 2044",
+    city: "Sydney NSW",
     number: "0404 858 205",
     email: "sammy.pinto.sfs@gmail.com",
-    instagram: `<a href="https://www.instagram.com/ripsammypinto2016/">@ripsammypinto2016</a>
-                     <a href="https://www.instagram.com/minipinto/">@minipinto</a>`
-  }
-
-  filmRoles = [
+    instagram: [
+      {
+        name:" @ripsammypinto2016",
+        link: "https://www.instagram.com/ripsammypinto2016/"
+      },
+      {
+        name: "@minipinto",
+        link: "https://www.instagram.com/minipinto/"
+      }
+    ]
+  },
+  filmRoles: [
     "Director of Photography",
     "Camera Operator",
     "Camera Assistant",
@@ -36,24 +44,22 @@ class Sammy{
     "Boom Swinger",
     "Runner",
     "Best Boy",
-  ]
-
-  awards = [
+  ],
+  awards: [
     "Best Cinematographer: Diploma of Screen and Media Part 2 - Sammy Pinto ‘Jesus Piece’",
     "Most Provocative Film - ‘WTF TV PRESENTS: SASHA’",
     "Duke of Edinburgh Scheme- Bronze, Silver and Gold",
     "Employee of the month-Hoyts",
     "The Scarf Foundation Award for Commitments to the School Environment",
     "Received many awards/trophies in sporting achievements",
-  ]
-
-  qualifications = [
+  ],
+  qualifications: [
     "RSA",
     "RCG",
     "Full Drivers Licence",
     "2017 - Sydney Film School",
-  ]
-  experiences = [
+  ],
+  experiences: [
     {
       title: "Freelance",
       location: "Sydney",
@@ -114,9 +120,8 @@ class Sammy{
       role: "School Photographer",
       date: "2012 - 2016",
     },
-  ]
-
-  education = [
+  ],
+  education: [
 {
       title: "Tara Anglican School For Girls",
       location: "North Parramatta",
@@ -128,10 +133,8 @@ class Sammy{
       location: "Green Square",
       qualifications: "Diploma of Screen and Media, Advanced Certificate in Film Sound ",
       date: "February 2017 - December 2018",
-}];
-
-
-  projects = [
+}],
+  projects: [
     {
       title: "Out of my mind",
       date: "2017",

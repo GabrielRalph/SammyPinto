@@ -3,22 +3,106 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <script src="https://www.svg.plus/2.js"></script>
-  <script src="https://www.svg.plus/vector.js"></script>
-  <script src="./Resume.js"></script>
   <script src="./Sammy.js"></script>
   <title>Sammy Pinto</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
 </head>
 
 <body>
+  <div id="Sammy">
 
+    <table>
 
+      <tr>
+        <td>
+          <h1>{{sammy.name}}</h1>
+        </td>
+        <td class = "contacts">
+          <h5>
+            {{sammy.contacts.address}}
+            <br />
+            {{sammy.contacts.city}}
+          </h5>
+
+          <h5>{{sammy.contacts.number}}</h5>
+          <h5>{{sammy.contacts.email}}</h5>
+          <h5 v-for= "insta in sammy.contacts.instagram">
+            <a :href="insta.link">{{insta.name}}</a>
+          </h5>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class = "list">
+            <h2 @click = "educationShown = !educationShown">Eduaction<h2/>
+              <div class = "short-description" v-if= "educationShown" v-for = "edu in sammy.education">
+                <h3>
+                  <b>{{edu.title}}({{edu.location}})</b> - <i>{{edu.qualifications}}</i>
+                </h3>
+                <p>{{edu.date}}</p>
+              </div>
+          </div>
+
+          <div class = "list">
+            <h2 @click = "experiencesShown = !experiencesShown">Experience<h2/>
+            <div class = "short-description" v-if= "experiencesShown" v-for = "experience in sammy.experiences">
+              <h3>
+                <b>{{experience.title}}</b>, {{experience.location}} - <i>{{experience.role}}</i>
+              </h3>
+               <p>{{experience.date}}</p>
+            </div>
+          </div>
+
+          <div class = "list">
+            <h2 @click = "projectsShown = !projectsShown">Projects<h2/>
+            <div class = "short-description" v-if= "projectsShown" v-for = "project in sammy.projects">
+              <h3>
+                <b>{{project.title}}({{project.date}})</b> - <i>{{project.role}}</i>
+              </h3>
+              <p>{{project.description}}</p>
+            </div>
+          </div>
+        </td>
+
+        <td>
+          <div class="short-list">
+            <h2>Film Roles</h2>
+            <h4 v-for = "role in sammy.filmRoles">{{role}}</h4>
+          </div>
+
+          <div class="short-list">
+            <h2>Awards</h2>
+            <h4 v-for = "award in sammy.awards">{{award}}</h4>
+          </div>
+
+          <div class="short-list">
+            <h2>Qualifications</h2>
+            <h4 v-for = "qualification in sammy.qualifications">{{qualification}}</h4>
+          </div>
+
+        </td>
+      </tr>
+
+    </table>
+
+  </div>
 
 </body>
+<script>
+let sammyResume = new Vue({
+  el: "#Sammy",
+  data: {
+    sammy: Sammy,
+    projectsShown: true,
+    experiencesShown: true,
+    educationShown: true,
+  }
+})
+</script>
 <style>
 body{
   font-family: "Comic Neue";
@@ -88,9 +172,4 @@ body h1:first-of-type{
   margin-top: 0;
 }
 </style>
-<script>
-  let sammy = new Sammy();
-  let resume = new Resume(sammy);
-  document.body.appendChild(resume)
-</script>
 </html>
