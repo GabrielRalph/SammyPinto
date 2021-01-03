@@ -112,7 +112,7 @@ let sammyResume = new Vue({
   computed:{
     orderedProjects: function(){
       let projects = this.sammy.projects;
-      let sorted = projects.sort((a, b) => {
+      projects.sort((a, b) => {
         let dateA = new Date(a.dateOrder);
         let dateB = new Date(b.dateOrder);
         if (dateA > dateB) return 1;
