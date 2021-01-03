@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <div id="Sammy">
+  <div visibility = "hidden" id="Sammy">
 
     <table>
 
@@ -100,6 +100,10 @@ let sammyResume = new Vue({
     projectsShown: true,
     experiencesShown: true,
     educationShown: true,
+  },
+  created(){
+    let el = document.getElementById('Sammy');
+    el.setAttribute('visibility', 'visible');
   }
 })
 </script>
