@@ -124,17 +124,18 @@ let Sammy = {
   ],
   education: [
 {
-      title: "Tara Anglican School For Girls",
-      location: "North Parramatta",
-      qualifications: "Kindergarten - Year 12 HSC",
-      date: "March 2004 - December 2016",
-},
-{
       title: "Sydney Film School",
       location: "Green Square",
       qualifications: "Diploma of Screen and Media, Advanced Certificate in Film Sound ",
       date: "February 2017 - December 2018",
-}],
+},
+{
+      title: "Tara Anglican School For Girls",
+      location: "North Parramatta",
+      qualifications: "Kindergarten - Year 12 HSC",
+      date: "March 2004 - December 2016",
+}
+],
   projects: [
     {
       title: "Out of my mind",
