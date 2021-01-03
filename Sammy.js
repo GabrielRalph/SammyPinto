@@ -122,7 +122,7 @@ let Sammy = {
       date: "2012 - 2016",
     },
   ],
-  education: [
+  educations: [
 {
       title: "Sydney Film School",
       location: "Green Square",

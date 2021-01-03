@@ -1,20 +1,27 @@
 <!doctype html>
 
 <html lang="en">
+
+<!-- Head contains meta data, fonts and scripts -->
 <head>
   <meta charset="utf-8">
-  <script src="./Sammy.js"></script>
   <title>Sammy Pinto</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <script src="./Sammy.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-
 </head>
 
+<!-- Body contains most of all html -->
 <body>
+
+  <!-- Within the body we will render a single div using the vue js package to build it -->
   <div visibility = "hidden" id="Sammy">
 
+    <!-- Make the only -->
     <table>
+
+      <!-- Top row -->
       <tr>
 
         <!-- Main title in top left table cell -->
@@ -32,31 +39,44 @@
 
           <h5>{{sammy.contacts.number}}</h5>
           <h5>{{sammy.contacts.email}}</h5>
-          <h5 v-for= "insta in sammy.contacts.instagram">
-            <a :href="insta.link">{{insta.name}}</a>
+
+          <!-- For every instagram account render a link with the account name as text -->
+          <h5 v-for= "account in sammy.contacts.instagram">
+            <a :href="account.link">{{account.name}}</a>
           </h5>
+
+          <!-- Render a single link with  -->
           <h5>
             <a :href = "sammy.contacts.linkedin">Linkedin</a>
           </h5>
         </td>
       </tr>
 
+      <!-- Bottom row -->
       <tr>
 
-        <!-- Education, experiences and projects in the bottom left table cell -->
+        <!-- Bottom left table cell -->
         <td>
+
           <div class = "list">
+            <!-- Clicking the subheading toggles whether education qualifications are shown -->
             <h2 @click = "educationShown = !educationShown">Eduaction</h2>
-              <div class = "short-description" v-if= "educationShown" v-for = "edu in sammy.education">
-                <h3>
-                  <b>{{edu.title}}({{edu.location}})</b> - <i>{{edu.qualifications}}</i>
-                </h3>
-                <p>{{edu.date}}</p>
-              </div>
+
+            <!-- If education contents are shown, for each education in the educations list render div with contents -->
+            <div class = "short-description" v-if= "educationShown" v-for = "education in sammy.educations">
+              <h3>
+                <b>{{education.title}}({{education.location}})</b> - <i>{{education.qualifications}}</i>
+              </h3>
+              <p>{{education.date}}</p>
+            </div>
           </div>
 
           <div class = "list">
+
+            <!-- Clicking the subheading toggles whether experiences are shown -->
             <h2 @click = "experiencesShown = !experiencesShown">Experience</h2>
+
+            <!-- If experiences are shown, for each experience in the experiences list render div with contents -->
             <div class = "short-description" v-if= "experiencesShown" v-for = "experience in sammy.experiences">
               <h3>
                 <b>{{experience.title}}</b>, {{experience.location}} - <i>{{experience.role}}</i>
@@ -66,7 +86,11 @@
           </div>
 
           <div class = "list">
+
+            <!-- Clicking the subheading toggles whether projects are shown -->
             <h2 @click = "projectsShown = !projectsShown">Projects</h2>
+
+            <!-- If projects are shown, for each project in the projects list render div with contents -->
             <div class = "short-description" v-if= "projectsShown" v-for = "project in orderedProjects">
               <h3>
                 <b>{{project.title}}({{project.date}})</b> - <i>{{project.role}}</i>
@@ -76,30 +100,44 @@
           </div>
         </td>
 
+        <!-- Bottom right table cell render short lists -->
         <td>
           <div class="short-list">
             <h2>Film Roles</h2>
+
+            <!-- Render every role in the filmRoles list -->
             <h4 v-for = "role in sammy.filmRoles">{{role}}</h4>
           </div>
 
           <div class="short-list">
             <h2>Awards</h2>
+
+            <!-- Render every award in the awards list -->
             <h4 v-for = "award in sammy.awards">{{award}}</h4>
           </div>
 
           <div class="short-list">
             <h2>Qualifications</h2>
+
+            <!-- Render every qualification in the qualifications list -->
             <h4 v-for = "qualification in sammy.qualifications">{{qualification}}</h4>
           </div>
+        </td>
+      </tr>
 
+      <!-- Footer row -->
+      <tr>
+        <td class = "galetora" colspan="2">
+          <h6>Designed by <a target = "_blank" href = "https://www.galetora.com">Gabriel Leonard Toohey Ralph</a></h6>
         </td>
       </tr>
 
     </table>
-
   </div>
-
 </body>
+
+<!-- Script, this script sets up a vue
+     instance to render the div inside the body-->
 <script>
 let sammyResume = new Vue({
   el: "#Sammy",
@@ -128,28 +166,50 @@ let sammyResume = new Vue({
   }
 })
 </script>
+
+<!-- Css styling -->
 <style>
 body{
+  /* Colors */
+  --light: #777777;
+
+  --galetora: #555555;
+
+  --color: #060606;
+  --background: #fffffc;
+
   font-family: "Comic Neue";
-  font-size: 2vw;
+  font-size: 1.8vw;
+
+  background: var(--background);
+  color: var(--color);
 }
 h3{
   font-size: 1em;
   font-weight: 500;
   margin-bottom: 0;
 }
-p{
+.list p{
   margin-top: 0.4em;
   font-size: 0.8em;
-  color: grey;
+  color: var(--light);
 }
 .list div:last-of-type{
   margin-bottom: 7em;
 }
-h6{
+
+.galetora h6{
   text-align: center;
   margin-top: 5em;
-  color: #ff4b22;
+  font-family: 'Arial';
+  color: var(--galetora);
+}
+.galetora h6 a{
+  text-decoration: none;
+  font-weight: 700;
+  padding: 3px 5px;
+  border-radius: 10pt;
+  color: var(--galetora);
 }
 .list{
   margin-bottom: 2em;
@@ -169,7 +229,8 @@ h4{
   padding: 0.2em 0;
 }
 h2{
-  font-size: 1.3em;
+  font-size: 1.4em;
+  font-weight: 700;
   cursor: pointer;
 }
 div h5:first-of-type{
@@ -189,11 +250,11 @@ h1{
 }
 h5 a{
   text-decoration: none;
-  color: black;
+  color: var(--color);
   font-weight: 600;
 
 }
-body h1:first-of-type{
+td h1:first-of-type{
   margin-top: 0;
 }
 </style>
