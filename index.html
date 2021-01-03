@@ -64,7 +64,7 @@
 
           <div class = "list">
             <h2 @click = "projectsShown = !projectsShown">Projects</h2>
-            <div class = "short-description" v-if= "projectsShown" v-for = "project in sammy.projects">
+            <div class = "short-description" v-if= "projectsShown" v-for = "project in orderedProjects">
               <h3>
                 <b>{{project.title}}({{project.date}})</b> - <i>{{project.role}}</i>
               </h3>
@@ -105,6 +105,16 @@ let sammyResume = new Vue({
     projectsShown: true,
     experiencesShown: true,
     educationShown: true,
+  },
+  computed:{
+    orderedProjects: function(){
+      let projects = this.sammy.projects;
+      let sorted = projects.sort((a, b) => {
+        let dateA = new Date(a.dateOrder);
+        let dateB = new Date(b.dateOrder);
+        console.log(dateA);
+      })
+    }
   },
   created(){
     let el = document.getElementById('Sammy');
