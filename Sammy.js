@@ -30,7 +30,8 @@ let Sammy = {
         name: "@minipinto",
         link: "https://www.instagram.com/minipinto/"
       }
-    ]
+    ],
+    linkedin: "someurl"
   },
   filmRoles: [
     "Director of Photography",
