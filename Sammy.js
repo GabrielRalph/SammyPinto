@@ -141,21 +141,24 @@ let Sammy = {
       date: "2017",
       role: "Camera Operator",
       description: "Drama 16mm short film, Sydney Film School",
-      video: "http link"
+      video: "http link",
+      dateOrder: "1/1/2017"
     },
     {
       title: "Panopticon",
       date: "2017",
       role: "Best Boy/Runner",
       description: "Sci-fi 16mm short film, Sydney Film School",
-      video: "http link"
+      video: "http link",
+      dateOrder: "1/3/2017",
     },
     {
       title: "Veteran",
       date: "2017",
       role: "Grip/Gaffer/Runner",
       description: "Drama 16mm short film, Sydney Film School",
-      video: "http link"
+      video: "http link",
+      dateOrder: "1/2/2017"
     },
     {
       title: "The Dilemma of Choice and Choosing Nothing Possible",
