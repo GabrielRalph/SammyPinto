@@ -15,11 +15,14 @@
   <div visibility = "hidden" id="Sammy">
 
     <table>
-
       <tr>
+
+        <!-- Main title in top left table cell -->
         <td>
           <h1>{{sammy.name}}</h1>
         </td>
+
+        <!-- Contacts in top right table cell  -->
         <td class = "contacts">
           <h5>
             {{sammy.contacts.address}}
@@ -36,6 +39,8 @@
       </tr>
 
       <tr>
+
+        <!-- Education, experiences and projects in the bottom left table cell -->
         <td>
           <div class = "list">
             <h2 @click = "educationShown = !educationShown">Eduaction</h2>
