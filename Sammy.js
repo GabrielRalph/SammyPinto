@@ -20,7 +20,7 @@ let Sammy = {
     address: "St Peters, 2044",
     city: "Sydney NSW",
     number: "0404 858 205",
-    email: "sammy.pinto.sfs@gmail.com",
+    email: "sammyp.film@gmail.com",
     instagram: [
       {
         name:" @ripsammypinto2016",
