@@ -189,7 +189,7 @@ let Sammy = {
       dateOrder: "5/1/2020",
     },
     {
-      title: "DMA’S, Round & Around [Official Video] ",
+      title: "DMA’S, Round & Around [Official Video]",
       date: "2020",
       role: "Production Assistant and Camera Operator",
       description: "Music Video",
