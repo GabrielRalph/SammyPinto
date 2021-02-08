@@ -40,11 +40,9 @@ let Sammy = {
     "Sound Recordist",
     "Sound Designer",
     "Sound Mixer",
-    "Grip",
     "Gaffer",
-    "Boom Swinger",
-    "Runner",
     "Best Boy",
+    "Runner",
   ],
   awards: [
     "Best Cinematographer: Diploma of Screen and Media Part 2 - Sammy Pinto ‘Jesus Piece’",
@@ -58,7 +56,6 @@ let Sammy = {
     "RSA",
     "RCG",
     "Full Drivers Licence",
-    "2017 - Sydney Film School",
   ],
   experiences: [
     {
@@ -137,7 +134,14 @@ let Sammy = {
 }
 ],
   projects: [
-
+    {
+      title: "Ziggy Ramo performs 'APRIL 25th', FBI Radio SMAC Awards",
+      date: "2020",
+      role: "Camera Operator",
+      description: "Live performance at FBI Radio",
+      video: "https://youtu.be/CtYowrBA-aI",
+      dateOrder: "1/3/2021",
+    },
     {
       title: "Dogma, Reformation",
       date: "2020",
@@ -149,7 +153,7 @@ let Sammy = {
     {
       title: "The Flower (post production) ",
       date: "2020",
-      role: "Camera Operator",
+      role: "Camera Assistant and Camera Operator",
       description: "Short film",
       dateOrder: "1/1/2020",
 
@@ -159,7 +163,7 @@ let Sammy = {
       date: "2020",
       role: "Director",
       description: "Music Video",
-      dateOrder: "2/1/2020",
+      dateOrder: "2/1/2021",
     },
     {
       title: "Hayley Mary, Live show 2020 (post production)",
