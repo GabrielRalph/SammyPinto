@@ -49,8 +49,8 @@ let Sammy = {
   awards: [
     "Best Cinematographer: Diploma of Screen and Media Part 2 - Sammy Pinto ‘Jesus Piece’",
     "Most Provocative Film - ‘WTF TV PRESENTS: SASHA’",
-    "Duke of Edinburgh Scheme- Bronze, Silver and Gold",
-    "Employee of the month-Hoyts",
+    "Duke of Edinburgh Scheme - Bronze, Silver and Gold",
+    "Employee of the month - Hoyts",
     "The Scarf Foundation Award for Commitments to the School Environment",
     "Received many awards/trophies in sporting achievements",
   ],
