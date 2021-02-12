@@ -29,12 +29,17 @@ let Sammy = {
       {
         name: "@minipinto",
         link: "https://www.instagram.com/minipinto/"
+      },
+      {
+        name: "@crackflowerproductions",
+        link: "https://www.instagram.com/crackflowerproductions/"
       }
     ],
     linkedin: "someurl"
   },
   filmRoles: [
-    "Director of Photography",
+    "Director"
+    "DOP",
     "Camera Operator",
     "Gaffer",
     "Camera Assistant",
