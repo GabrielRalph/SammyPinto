@@ -36,11 +36,8 @@ let Sammy = {
   filmRoles: [
     "Director of Photography",
     "Camera Operator",
-    "Camera Assistant",
-    "Sound Recordist",
-    "Sound Designer",
-    "Sound Mixer",
     "Gaffer",
+    "Camera Assistant",
     "Best Boy",
     "Runner",
   ],
@@ -156,24 +153,23 @@ let Sammy = {
       role: "Camera Assistant and Camera Operator",
       description: "Short film",
       dateOrder: "1/1/2020",
-
     },
     {
       title: "Rosa Racer, Sober [music video](post production)",
-      date: "2020",
+      date: "2021",
       role: "Director",
       description: "Music Video",
       dateOrder: "2/1/2021",
     },
     {
-      title: "Hayley Mary, Live show 2020 (post production)",
+      title: "Hayley Mary, Live show 2020 (Post Production)",
       date: "2020",
       role: "Camera Operator",
       description: "Live show recording at Paddo RSL",
       dateOrder: "3/1/2020",
     },
     {
-      title: "The Melodrones, I’ll belong to you [Live performance]",
+      title: "The Melodrones, I’ll belong to you [Live Performance]",
       date: "2020",
       role: "Camera Operator",
       description: "Live set recording at Paddo RSL",
@@ -181,7 +177,7 @@ let Sammy = {
       dateOrder: "4/1/2020",
     },
     {
-      title: "Hayley Mary, The Chain [Nude version]",
+      title: "Hayley Mary, The Chain [Nude Version]",
       date: "2020",
       role: "Camera Operator ",
       description: "Music Video",
@@ -197,7 +193,7 @@ let Sammy = {
       dateOrder: "6/1/2020",
     },
     {
-      title: "Only if you're lucky (post production)",
+      title: "Only if you're lucky (Post Production)",
       date: "2019",
       role: "Director and Actor",
       description: "Short film ",
