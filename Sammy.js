@@ -41,8 +41,8 @@ let Sammy = {
     "Director"
     "DOP",
     "Camera Operator",
-    "Gaffer",
     "Camera Assistant",
+    "Gaffer",
     "Best Boy",
     "Runner",
   ],
