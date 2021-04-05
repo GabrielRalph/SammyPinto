@@ -133,7 +133,7 @@ let Sammy = {
       location: "North Parramatta",
       qualifications: "Kindergarten - Year 12 HSC",
       date: "March 2004 - December 2016",
-}
+},
 ],
   projects: [
     {
@@ -160,7 +160,7 @@ let Sammy = {
       dateOrder: "1/1/2020",
     },
     {
-      title: "Rosa Racer, Sober [music video](post production)",
+      title: "Rosa Racer, Sober [music video]",
       date: "2021",
       role: "Director",
       description: "Music Video",
