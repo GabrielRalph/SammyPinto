@@ -60,7 +60,7 @@
 
           <div class = "list">
             <!-- Clicking the subheading toggles whether education qualifications are shown -->
-            <h2 @click = "educationShown = !educationShown">education</h2>
+            <h2 @click = "educationShown = !educationShown">Education</h2>
 
             <!-- If education contents are shown, for each education in the educations list render div with contents -->
             <div class = "short-description" v-if= "educationShown" v-for = "education in sammy.educations">
