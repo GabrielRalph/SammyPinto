@@ -38,7 +38,7 @@ let Sammy = {
     linkedin: "someurl"
   },
   filmRoles: [
-    "Director"
+    "Director",
     "DOP",
     "Camera Operator",
     "Camera Assistant",
