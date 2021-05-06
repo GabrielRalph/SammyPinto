@@ -13,6 +13,9 @@
 
 <!-- Body contains most of all html -->
 <body>
+  <video autoplay loop muted playsinline class="video-background ">
+  <source src="Sober.mp4" type="video/mp4">
+</video>
 
 
 </body>
@@ -43,6 +46,17 @@
 
     background: var(--background);
     color: var(--color);
+  }
+  video{
+    position: fixed;
+    top: -20%;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    --h: calc(135vw*665/1183);
+    height: max(135vh,var(--h));
+    transform: translate(-50%, 0);
   }
   .resume{
     padding: 4em;
