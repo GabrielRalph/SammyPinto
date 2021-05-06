@@ -9,6 +9,13 @@ class Resume extends SvgPlus{
     this.class = "resume"
 
     this.table = this.createChild("TABLE")
+    let link = this.createChild("A")
+    link.innerHTML = "By Gabriel"
+    link.styles = {
+      display: 'block',
+      'text-align': 'center'
+    }
+    link.href = "https://www.galetora.com"
 
     let row = this.table.createChild("TBODY").createChild("TR");
     this.columnA = row.createChild("TD");
@@ -64,6 +71,7 @@ class Resume extends SvgPlus{
   fader(e){
     let box = this.table.getBoundingClientRect();
     this.bg = (50-box.y)/window.innerHeight;
+    if (this.bg < 0) this.bg = 0;
     this.styles = {
       background: `rgba(255,255,255, ${this.bg > 1 ? 1 : this.bg})`,
     }
