@@ -137,6 +137,20 @@ let Sammy = {
 ],
   projects: [
     {
+      title: "Tennessine (Post Production)",
+      date: "2021",
+      role: "Camera Assistant, Lighting Assistant and Standby Props",
+      description: "Feature Film",
+      dateOrder: "3/3/2021",
+    },
+    {
+      title: "Lonesome (Post Production)",
+      date: "2021",
+      role: "Camera Assistant",
+      description: "Feature Film",
+      dateOrder: "2/3/2021",
+    },
+    {
       title: "Ziggy Ramo performs 'APRIL 25th', FBI Radio SMAC Awards",
       date: "2020",
       role: "Camera Operator",
@@ -144,6 +158,13 @@ let Sammy = {
       video: "https://youtu.be/CtYowrBA-aI",
       dateOrder: "1/3/2021",
     },
+    {
+      title: "Rosa Racer, Sober [music video]",
+      date: "2021",
+      role: "Writter and Director",
+      description: "Music Video",
+      video: "https://youtu.be/A6xsgeUbLnU",
+      dateOrder: "2/1/2021",
     {
       title: "Dogma, Reformation",
       date: "2020",
@@ -153,18 +174,11 @@ let Sammy = {
       dateOrder: "1/5/2020",
     },
     {
-      title: "The Flower (post production) ",
+      title: "The Flower",
       date: "2020",
       role: "Camera Assistant and Camera Operator",
       description: "Short film",
       dateOrder: "1/1/2020",
-    },
-    {
-      title: "Rosa Racer, Sober [music video]",
-      date: "2021",
-      role: "Director",
-      description: "Music Video",
-      dateOrder: "2/1/2021",
     },
     {
       title: "Hayley Mary, Live show 2020 (Post Production)",
