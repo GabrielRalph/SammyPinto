@@ -43,6 +43,7 @@ let Sammy = {
     "Camera Operator",
     "Camera Assistant",
     "Gaffer",
+    "Lighting Assistant",
     "Best Boy",
     "Runner",
   ],
@@ -136,6 +137,13 @@ let Sammy = {
 },
 ],
   projects: [
+    {
+      title: "Amy Shark, Worst Day Of My Life (Post Productions)",
+      date: "2021",
+      role: "Production Runner and Feature Extra (Chipgirl)",
+      description: "Music Video",
+      dateOrder: "4/3/2021",
+    },
     {
       title: "Tennessine (Post Production)",
       date: "2021",
