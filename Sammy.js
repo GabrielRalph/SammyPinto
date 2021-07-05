@@ -138,7 +138,28 @@ let Sammy = {
 ],
   projects: [
     {
-      title: "Amy Shark, Worst Day Of My Life (Post Productions)",
+      title: "The Family Show",
+      date: "2021",
+      role: "Best Boy",
+      description: "TVC",
+      dateOrder: "7/3/2021",
+    },
+    {
+      title: "Fashion Week",
+      date: "2021",
+      role: "Camera Operator and Data Wrangler",
+      description: "Event",
+      dateOrder: "6/3/2021",
+    },
+    {
+      title: "Frogger",
+      date: "2021",
+      role: "Obstacle Course Tester",
+      description: "TV Show",
+      dateOrder: "5/3/2021",
+    },
+    {
+      title: "Amy Shark, Worst Day Of My Life",
       date: "2021",
       role: "Production Runner and Feature Extra (Chipgirl)",
       description: "Music Video",
