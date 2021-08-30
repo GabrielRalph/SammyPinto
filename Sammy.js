@@ -194,6 +194,7 @@ let Sammy = {
       description: "Music Video",
       video: "https://youtu.be/A6xsgeUbLnU",
       dateOrder: "2/1/2021",
+    },
     {
       title: "Dogma, Reformation",
       date: "2020",
