@@ -27,8 +27,8 @@ let Sammy = {
         link: "https://www.instagram.com/ripsammypinto2016/"
       },
       {
-        name: "@minipinto",
-        link: "https://www.instagram.com/minipinto/"
+        name: "@bitcoingurk",
+        link: "https://www.instagram.com/bitcoingurk/"
       },
       {
         name: "@crackflowerproductions",
@@ -59,6 +59,7 @@ let Sammy = {
     "RSA",
     "RCG",
     "Full Drivers Licence",
+    "Double Vaxxed",
   ],
   experiences: [
     {
@@ -137,6 +138,34 @@ let Sammy = {
 },
 ],
   projects: [
+    {
+      title: "Every Home Is A Greyhound Home",
+      date: "2021",
+      role: "Production Assistant",
+      description: "Commercial",
+      dateOrder: "11/3/2021",
+    },
+    {
+      title: "Ovarian Cancer Awareness Campaign",
+      date: "2021",
+      role: "Lighting Assistant",
+      description: "Commercial",
+      dateOrder: "10/3/2021",
+    },
+    {
+      title: "Lego Master - Season 4",
+      date: "2021",
+      role: "Lego Sorter",
+      description: "TVC",
+      dateOrder: "9/3/2021",
+    },
+    {
+      title: "Johnnie Walker Aperitivo",
+      date: "2021",
+      role: "Production Assistant",
+      description: "Commercial",
+      dateOrder: "8/3/2021",
+    },
     {
       title: "The Family Show",
       date: "2021",
