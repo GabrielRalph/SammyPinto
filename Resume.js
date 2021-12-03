@@ -28,7 +28,7 @@ class Resume extends SvgPlus{
       display: 'block',
       'text-align': 'center'
     }
-    link.href = "https://www.galetora.com"
+    link.href = "https://www.w4v.es"
 
     let row = this.table.createChild("TBODY").createChild("TR");
     this.columnA = row.createChild("TD");
