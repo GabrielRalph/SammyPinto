@@ -59,7 +59,8 @@ let Sammy = {
     "RSA",
     "RCG",
     "Full Drivers Licence",
-    "Double Vaxxed",
+    "Working with Childrens Check",
+    "Double Vaxxed and Booster",
   ],
   experiences: [
     {
@@ -139,6 +140,13 @@ let Sammy = {
 ],
   projects: [
     {
+      title: "Alakai",
+      date: "2022",
+      role: "Camera Assistant and Gaffer",
+      description: "Feature Film",
+      dateOrder: "1/1/2022",
+    },
+    {
       title: "Every Home Is A Greyhound Home",
       date: "2021",
       role: "Production Assistant",
@@ -202,7 +210,7 @@ let Sammy = {
       dateOrder: "3/3/2021",
     },
     {
-      title: "Lonesome (Post Production)",
+      title: "Lonesome",
       date: "2021",
       role: "Camera Assistant",
       description: "Feature Film",
