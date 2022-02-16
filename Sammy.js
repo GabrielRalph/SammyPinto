@@ -17,7 +17,8 @@ let Sammy = {
     }
   ],
   contacts: {
-    address: "St Peters, 2044",
+    intro: "I acknowledge and pay my respects to the Gadigal People, the Traditional Owners and Custodians of the Lands on which I live and work on.",
+    address: "Marrickville, 2204",
     city: "Sydney NSW",
     number: "0404 858 205",
     email: "sammyp.film@gmail.com",
@@ -73,7 +74,7 @@ let Sammy = {
       title: "Frankie's Pizza",
       location: "Sydney",
       role: "Barback",
-      date: "April 2019 - Present",
+      date: "April 2019 - December 2020",
     },
     {
       title: "Fredas",
