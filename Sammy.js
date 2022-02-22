@@ -32,8 +32,8 @@ let Sammy = {
         link: "https://www.instagram.com/bitcoingurk/"
       },
       {
-        name: "@crackflowerproductions",
-        link: "https://www.instagram.com/crackflowerproductions/"
+        name: "@IMDB",
+        link: "https://www.imdb.com/name/nm10259479/"
       }
     ],
     linkedin: "someurl"
@@ -74,7 +74,7 @@ let Sammy = {
       title: "Frankie's Pizza",
       location: "Sydney",
       role: "Barback",
-      date: "April 2019 - December 2020",
+      date: "April 2019 - December 2021",
     },
     {
       title: "Fredas",
