@@ -24,12 +24,16 @@ let Sammy = {
     email: "sammyp.film@gmail.com",
     instagram: [
       {
-        name:" @ripsammypinto2016",
-        link: "https://www.instagram.com/ripsammypinto2016/"
+        name:" @Camera Operator Showreel",
+        link: "https://vimeo.com/523397944"
       },
       {
         name: "@bitcoingurk",
         link: "https://www.instagram.com/bitcoingurk/"
+      },
+      {
+        name: "@linkedin",
+        link: "https://www.linkedin.com/in/sammy-p-b13262117/"
       },
       {
         name: "@IMDB",
