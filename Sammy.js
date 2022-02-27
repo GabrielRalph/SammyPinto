@@ -32,7 +32,7 @@ let Sammy = {
         link: "https://www.instagram.com/bitcoingurk/"
       },
       {
-        name: "linkedin",
+        name: "LINKEDIN",
         link: "https://www.linkedin.com/in/sammy-p-b13262117/"
       },
       {
@@ -44,6 +44,7 @@ let Sammy = {
   },
   filmRoles: [
     "Director",
+    "Writter",
     "DOP",
     "Camera Operator",
     "Camera Assistant",
@@ -57,7 +58,6 @@ let Sammy = {
     "Most Provocative Film - ‘WTF TV PRESENTS: SASHA’",
     "Duke of Edinburgh Scheme - Bronze, Silver and Gold",
     "Employee of the month - Hoyts",
-    "The Scarf Foundation Award for Commitments to the School Environment",
     "Received many awards/trophies in sporting achievements",
   ],
   qualifications: [
@@ -297,6 +297,13 @@ let Sammy = {
       description: "Season II Episode 5 - Carpark",
       video: "https://youtu.be/tswYTMagdW4",
       dateOrder: "2/1/2019",
+    },
+    {
+      title: "Seeing It As It Isn't",
+      date: "2019",
+      role: "1st AC",
+      description: "Short film",
+      dateOrder: "3/2/2019",
     },
     {
       title: "Nostalgia",
