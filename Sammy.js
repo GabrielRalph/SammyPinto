@@ -24,7 +24,7 @@ let Sammy = {
     email: "sammyp.film@gmail.com",
     instagram: [
       {
-        name:" @Camera Operator Showreel",
+        name: "Camera Operator Showreel",
         link: "https://vimeo.com/523397944"
       },
       {
@@ -32,11 +32,11 @@ let Sammy = {
         link: "https://www.instagram.com/bitcoingurk/"
       },
       {
-        name: "@linkedin",
+        name: "linkedin",
         link: "https://www.linkedin.com/in/sammy-p-b13262117/"
       },
       {
-        name: "@IMDB",
+        name: "IMDB",
         link: "https://www.imdb.com/name/nm10259479/"
       }
     ],
