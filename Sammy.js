@@ -205,6 +205,7 @@ let Sammy = {
       date: "2021",
       role: "Production Runner and Feature Extra (Chipgirl)",
       description: "Music Video",
+      link: "https://youtu.be/Q08rkldG5B8",
       dateOrder: "4/3/2021",
     },
     {
