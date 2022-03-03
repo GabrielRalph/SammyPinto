@@ -15,6 +15,13 @@ let Sammy = {
       email: "mclennan.michael@gmail.com",
       number: "0432 085 370"
     }
+    {
+      name: "Daniel Hartley Allen",
+      location: "(Professional reference)",
+      role: "Cinematographer",
+      email: "s.potter.promo@gmail.com",
+      number: "0408 145 375"
+    },
   ],
   contacts: {
     intro: "I acknowledge and pay my respects to the Gadigal People, the Traditional Owners and Custodians of the Lands on which I live and work on.",
