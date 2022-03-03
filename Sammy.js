@@ -3,24 +3,18 @@ let Sammy = {
   references: [
     {
       name: "Stephen Potter",
-      location: "Freda",
-      role: "Head of AV Tech",
-      email: "s.potter.promo@gmail.com",
-      number: "0421 761 305"
+      location: "(Professional reference)",
+      role: "AV Tech",
     },
     {
       name: "Michael Mclennan",
-      location: "Sydney Film School",
+      location: "(Educational reference)",
       role: "Head of Film School",
-      email: "mclennan.michael@gmail.com",
-      number: "0432 085 370"
-    }
+    },
     {
       name: "Daniel Hartley Allen",
       location: "(Professional reference)",
       role: "Cinematographer",
-      email: "s.potter.promo@gmail.com",
-      number: "0408 145 375"
     },
   ],
   contacts: {
