@@ -146,6 +146,12 @@ let Sammy = {
 ],
   projects: [
     {
+      title: "Super Rosa",
+      date: "2022",
+      role: "Lighting Assistant",
+      description: "Feature Film",
+      dateOrder: "3/1/2022",
+    },{
       title: "Alakai",
       date: "2022",
       role: "Camera Assistant and Gaffer",
