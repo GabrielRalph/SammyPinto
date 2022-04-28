@@ -76,6 +76,12 @@ let Sammy = {
       date: "January 2014 - Present",
     },
     {
+      title: "RentACam",
+      location: "Alexandria",
+      role: "Rental Video Equipment Technician",
+      date: "April 2022 - Present",
+    },
+    {
       title: "Frankie's Pizza",
       location: "Sydney",
       role: "Barback",
