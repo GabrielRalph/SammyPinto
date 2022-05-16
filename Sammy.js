@@ -152,12 +152,20 @@ let Sammy = {
 ],
   projects: [
     {
+      title: "Australian Fashion Week 2022",
+      date: "2022",
+      role: "Data Wrangler",
+      description: "Event",
+      dateOrder: "4/1/2022",
+    },
+    {
       title: "Super Rosa",
       date: "2022",
       role: "Lighting Assistant",
       description: "Feature Film",
       dateOrder: "3/1/2022",
-    },{
+    },
+    {
       title: "Alakai",
       date: "2022",
       role: "Camera Assistant and Gaffer",
