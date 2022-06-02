@@ -76,6 +76,12 @@ let Sammy = {
       date: "January 2014 - Present",
     },
     {
+      title: "Vivid Live",
+      location: "Sydney Opera House",
+      role: "Createability Internship",
+      date: "May 2022 - Present",
+    },
+    {
       title: "RentACam",
       location: "Alexandria",
       role: "Rental Video Equipment Technician",
