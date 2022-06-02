@@ -158,6 +158,13 @@ let Sammy = {
 ],
   projects: [
     {
+      title: "Clickup",
+      date: "2022",
+      role: "Lighting Assistant",
+      description: "Commercial",
+      dateOrder: "5/1/2022",
+    },
+    {
       title: "Australian Fashion Week 2022",
       date: "2022",
       role: "Data Wrangler",
