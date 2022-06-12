@@ -44,6 +44,11 @@
     font-family: "Comic Neue";
     font-size: 1.8vw;
     margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 
     background: var(--background);
     color: var(--color);
@@ -56,7 +61,7 @@
     bottom: 0;
     z-index: -1;
     --h: calc(135vw*665/1183);
-    height: max(135vh,var(--h));
+    height: max(140vh,var(--h));
     transform: translate(-50%, 0);
   }
   .resume{
@@ -81,6 +86,10 @@
 
   }
 
+  .resume {
+    padding-top: 100vw;
+    background: white;
+  }
 
   /* List styles */
   .list{

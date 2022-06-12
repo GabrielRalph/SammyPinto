@@ -15,11 +15,13 @@ class Experience extends SvgPlus{
     this._location = exp.location;
     this._role = exp.role;
     this._data = exp.data;
-    this.innerHTML = `
-      <h3>
-        <b>${exp.title}</b>, ${exp.location} - <i>${exp.role}</i>
-      </h3>
-      <p>${exp.date}</p>`
+
+    let text = `<h3><b>${exp.title}</b>`
+    if (exp.location) text += `, ${exp.location}`
+    if (exp.role)text += ` - <i>${exp.role}</i>`
+    text += `</h3>`
+    if (exp.date) text += `<p>${exp.date}</p>`
+    this.innerHTML = text;
   }
 }
 
@@ -38,11 +40,13 @@ class Project extends SvgPlus{
     this._description = exp.description;
     this._role = exp.role;
     this._data = exp.data;
-    this.innerHTML = `
-      <h3>
-        <b>${exp.title}</b>, ${exp.date} - <i>${exp.role}</i>
-      </h3>
-      <p>${exp.description}</p>`
+    let text = `<h3><b>${exp.title}</b>`
+    if (exp.data) text += `, ${exp.date}`
+    if (exp.role) text += ` - <i>${exp.role}</i>`
+    text += '</h3>'
+    if (exp.description)
+    text += `<p>${exp.description}</p>`
+    this.innerHTML = text;
   }
 }
 
@@ -61,11 +65,13 @@ class Education extends SvgPlus{
     this._qualification = exp.qualification;
     this._location = exp.location;
     this._data = exp.data;
-    this.innerHTML = `
-      <h3>
-        <b>${exp.title}</b>, ${exp.location} - <i>${exp.qualification}</i>
-      </h3>
-      <p>${exp.date}</p>`
+    let text = `<h3><b>${exp.title}</b>`
+    if (exp.location)text += `, ${exp.location}`
+    if (exp.qualification) text += ` - <i>${exp.qualification}</i>`
+    text += '</h3>'
+    text += `<p>${exp.date}</p>`
+
+    this.innerHTML = text;
   }
 }
 
@@ -87,20 +93,23 @@ class Contacts extends SvgPlus{
     this.innerHTML = "";
     this.createChild("H5").innerHTML = `${contacts.address}<br />${contacts.city}`
 
-    let number = this.createChild("A")
-    number.props = {href: `tel:${contacts.number.replace(/\s/g, "")}`};
-    number.innerHTML = contacts.number
+    if (contacts.number) {
+      let number = this.createChild("A")
+      number.props = {href: `tel:${contacts.number.replace(/\s/g, "")}`};
+      number.innerHTML = contacts.number
+    }
 
-    let email = this.createChild("A")
-    email.props = {href: `mailto:${contacts.email}`};
-    email.innerHTML = contacts.email
+    if (contacts.email) {
+      let email = this.createChild("A")
+      email.props = {href: `mailto:${contacts.email}`};
+      email.innerHTML = contacts.email
+    }
 
     for (let insta of contacts.instagram) {
       let instaLink = this.createChild("A")
       instaLink.props = {href: insta.link};
       instaLink.innerHTML = insta.name
     }
-
   }
 }
 
@@ -122,12 +131,15 @@ class Reference extends SvgPlus{
     this._location = ref.location;
     this._number = ref.number;
     this._email = ref.email;
-    this.innerHTML = `
+    let text = `
       <h3>
-        <b>${ref.name}</b>, ${ref.location} - <i>${ref.role}</i>
-      </h3>
-      <a href = "mailto:${ref.email}">${ref.email}</a>
-      <a href = "tel:${ref.number.replace(/\s/g, '')}">${ref.number}</a>`
+        <b>${ref.name}</b>`
+    if (ref.location) text += `, ${ref.location}`;
+    if (ref.role) text += ` - <i>${ref.role}</i>`;
+    text += `</h3>`
+    if (ref.email) text += `<a href = "mailto:${ref.email}">${ref.email}</a>`
+    if (ref.number) text+=`<a href = "tel:${ref.number.replace(/\s/g, '')}">${ref.number}</a>`
+    this.innerHTML = text;
   }
 }
 
