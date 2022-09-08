@@ -43,6 +43,7 @@ let Sammy = {
     ],
     linkedin: "someurl"
   },
+
   filmRoles: [
     "Director",
     "Writter",
@@ -61,6 +62,21 @@ let Sammy = {
     "Employee of the month - Hoyts",
     "Received many awards/trophies in sporting achievements",
   ],
+
+  educations: [
+{
+      title: "Sydney Film School",
+      location: "Green Square",
+      qualifications: "Diploma of Screen and Media, Advanced Certificate in Film Sound ",
+      date: "February 2017 - December 2018",
+},
+{
+      title: "Tara Anglican School For Girls",
+      location: "North Parramatta",
+      qualifications: "Kindergarten - Year 12 HSC",
+      date: "March 2004 - December 2016",
+},
+],
   qualifications: [
     "RSA",
     "RCG",
@@ -68,6 +84,7 @@ let Sammy = {
     "Working with Childrens Check",
     "Double Vaxxed and Booster",
   ],
+
   experiences: [
     {
       title: "Freelance",
@@ -142,20 +159,6 @@ let Sammy = {
       date: "2012 - 2016",
     },
   ],
-  educations: [
-{
-      title: "Sydney Film School",
-      location: "Green Square",
-      qualifications: "Diploma of Screen and Media, Advanced Certificate in Film Sound ",
-      date: "February 2017 - December 2018",
-},
-{
-      title: "Tara Anglican School For Girls",
-      location: "North Parramatta",
-      qualifications: "Kindergarten - Year 12 HSC",
-      date: "March 2004 - December 2016",
-},
-],
   projects: [
     {
       title: "Clickup",

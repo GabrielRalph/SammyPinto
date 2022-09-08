@@ -1,4 +1,4 @@
-import {SvgPlus} from './SvgPlus.js'
+import {SvgPlus} from './SvgPlus/4.js'
 import {Experience, Project, Education, ListH4, Contacts, Reference} from './ItemTemplates.js'
 import {VList} from './VList.js'
 
@@ -49,8 +49,6 @@ class Resume extends SvgPlus{
       opacity: value
     }
   }
-
-
 
   clear(){
     this.columnA.innerHTML = ""
