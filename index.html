@@ -1,171 +1,364 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type = "module" src = "./Resume/resume-app.js"></script>
+    <link href="./DataFrames/form.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
-<html lang="en">
+  </head>
+  <body>
+    <resume-app hidden>
+      <div class = "user-frame">
+        <div class = "save">
+          <svg viewBox="0 0 99 99"><path d="M88.21,0c-6.17-.11-11.21,4.85-11.21,11,0,7-4.92,11-11,11H33c-6.08,0-11-3.71-11-11C22,4.86,16.96-.11,10.79,0,4.74,.11,0,5.31,0,11.36V88c0,6.08,4.92,11,11,11H88c6.08,0,11-4.92,11-11V11.36C99,5.31,94.26,.11,88.21,0ZM27.09,44h44.41c3.04,0,5.5,2.46,5.5,5.5s-2.46,5.5-5.5,5.5H27.09c-3.04,0-5.5-2.46-5.5-5.5s2.46-5.5,5.5-5.5Zm44.41,44H27.09c-3.04,0-5.5-2.46-5.5-5.5s2.46-5.5,5.5-5.5h44.41c3.04,0,5.5,2.46,5.5,5.5s-2.46,5.5-5.5,5.5Zm.21-16.5H27.29c-3.04,0-5.5-2.46-5.5-5.5s2.46-5.5,5.5-5.5h44.41c3.04,0,5.5,2.46,5.5,5.5s-2.46,5.5-5.5,5.5Z"/></svg>
+        </div>
+        <div class = "sign-in-out">
 
-<!-- Head contains meta data, fonts and scripts -->
-<head>
-  <meta charset="utf-8">
-  <title>Sammy Pinto</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-  <script src="./Sammy.js"></script>
-</head>
+        </div>
+      </div>
+      <data-frame>
+        <div class = "resume-title">
+          <item-view key = "name">
+            <template>
+              <h1>{{}}</h1>
+            </template>
+            <form>
+              <row><input type = "required"/></row>
+            </form>
+          </item-view>
+          <item-view key = "acknowledgement">
+            <template>
+              <h4>{{}}</h4>
+            </template>
+            <form>
+              <row><input type = "required"/></row>
+            </form>
+          </item-view>
+        </div>
 
+        <div class = "resume-contacts">
+          <item-view key = "contacts">
+            <template>
+              <h3>Contact</h3>
+              {address{<div>%1</div>}}
+              {city{<div>%1</div>}}
+              {number{<div>%1</div>}}
+              {email{<div>%1</div>}}
+            </template>
+            <form>
+              <row><input name = "address"/></row>
+              <row><input name = "city" type = "required"/></row>
+              <row><input name = "number" type = "required"/></row>
+              <row><input name = "email" /></row>
+            </form>
+          </item-view>
+        </div>
 
-<!-- Body contains most of all html -->
-<body>
-  <video autoplay loop muted playsinline class="video-background ">
-    <source src="Sober.mp4" type="video/mp4">
-  </video>
+        <div class = "resume-contents">
+          <item-list key = "experiences">
+            <h2>Experiences</h2>
+            <template>
+              <h3><b>{title{}}</b>{location{, %1}} {role{ - <i>%1</i>}}</h3>
+              <p>{date{}}</p>
+            </template>
+            <form>
+              <row>
+                <input type = "required" name = "title" placeholder="Title"/>
+                <input type = "date" name = "date" placeholder="Date"/>
+              </row>
+              <row>
+                <input name = "location" placeholder = "Location" />
+              </row>
+              <row>
+                <input name = "description" placeholder = "Short description..." />
+              </row>
+              <row>
+                <input name = "link" placeholder = "Link" />
+              </row>
+              <row>
+                <input name = "role" placeholder = "Role" />
+              </row>
+              <row>
+                <input name = "qualifications" placeholder = "Qualifications" />
+              </row>
+            </form>
+          </item-list>
+          <item-list key = "projects">
+            <h2>Projects</h2>
+            <form>
+              <row>
+                <input type = "required" name = "title" placeholder="Title"/>
+                <input type = "date" name = "date" placeholder="Date, e.g. 1 Jan 2013"/>
+              </row>
+              <row>
+                <input name = "description" placeholder = "Short description..." />
+              </row>
+              <row>
+                <input name = "link" placeholder = "Link" />
+              </row>
+              <row>
+                <input name = "roles" placeholder = "Role" />
+              </row>
+            </form>
+            <template>
+              <h3><b>{title{}}</b>{description{, %1}} {role{ - <i>%1</i>}}</h3>
+              <p>{date{}}</p>
+            </template>
+          </item-list>
+          <item-list key = "educations">
+            <h2>Education</h2>
+            <form>
+              <row>
+                <input type = "required" name = "title" placeholder="Title"/>
+                <input type = "date" name = "date" placeholder="Date, e.g. 1 Jan 2013"/>
+              </row>
+              <row>
+                <input name = "location" placeholder = "Location" />
+              </row>
+              <row>
+                <input name = "qualifications" placeholder = "Qualifications, e.g. RSA, Working with Childrens Check" />
+              </row>
+            </form>
+            <template>
+              <h3><b>{title{}}</b> {location{- <i>%1</i>}}</h3>
+              <p>{date{}}</p>
+            </template>
+          </item-list>
+          <item-list key = "references">
+            <h2>References</h2>
+            <form>
+              <row>
+                <input name = "name" type = "required" placeholder = "Name" />
+              </row>
+              <row>
+                <input name = "location" placeholder = "Location" />
+              </row>
+              <row>
+                <input name = "role" placeholder = "Role" />
+              </row>
+            </form>
+            <template>
+              <h3><b>{name{}}</b>{location{, %1}}{role{ - <i>%1</i>}}</h3>
+            </template>
+          </item-list>
+        </div>
 
+        <div class = "resume-short">
+          <item-list key = "linktree">
+            <h3>Links</h3>
+            <template>
+              <a {url{href = "%1"}}>{name{}}</a>
+            </template>
+            <form>
+              <row>
+                <input name = "name" type = "required" placeholder = "Link Name" />
+              </row>
+              <row>
+                <input name = "url" type = "required" placeholder = "Link URL" />
+              </row>
+            </form>
+          </item-list>
+          <div class = "key-sets">
 
-</body>
+          </div>
+          <item-list key = "awards">
+            <h3>Awards</h3>
+            <form>
+              <row>
+                <input placeholder = "Award Title" />
+              </row>
+            </form>
+            <template>
+              <div>{{}}</div>
+            </template>
+          </item-list>
+        </div>
+      </data-frame>
+    </resume-app>
 
-<!-- This is JavaScript, inside we set up a vue instance
-     to render the div inside the body with id Sammy    -->
-<script type = "module">
-  import {Resume} from './Resume.js'
+    <form-editor></form-editor>
+  </body>
 
-  document.body.appendChild(new Resume(Sammy))
-</script>
+  <script type = "module">
+    // let app = document.querySelector("resume-app");
+    // app.value = Sammy;
 
-<!-- CSS styling -->
-<style>
-
-  /* body style */
+  </script>
+  <style>
   body{
-
-    /* Variables */
-    --light: #777777;
-    --galetora: #555555;
-    --color: #060606;
-    --background: #fffffc;
-    overflow: hidden;
     font-family: "Comic Neue";
-    font-size: 1.8vw;
-    margin: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    background: var(--background);
-    color: var(--color);
-  }
-  video{
-    position: fixed;
-    top: -20%;
-    left: 50%;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    --h: calc(135vw*665/1183);
-    height: max(140vh,var(--h));
-    transform: translate(-50%, 0);
-  }
-  .resume{
-    padding: 4em;
-    overflow: scroll;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    position: absolute;
+    font-size: calc(0.9vmax + 0.9vmin);
+    margin: 1em;
   }
 
-  a{
+
+
+  [user][admin][edited] .save{
+    display: inherit;
+  }
+  .save {
+    display: none;
+    width: calc(1em + 4px);
+    height: calc(1em + 4px);
+  }
+  .save svg {
+    height: 100%;
+    width: 100%;
+    fill: #6ced11;
+    background: #dcffca;
+    border-radius: 15%;
+    cursor: pointer;
+  }
+  [editable] .user-frame {
+    display: flex;
+  }
+  .user-frame {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 0.3em;
+    align-items: center;
+    gap: 0.6em;
+  }
+  .sign-in-out {
+    width: 1em;
+    height: 1em;
+    border-radius: 1em;
+    border: 2px solid #fa3f01;
+    cursor: pointer;
+  }
+
+  [user] .sign-in-out {
+    background: #fa3f01;
+  }
+
+  h4 {margin-top: 0;}
+  data-frame {
+    display: grid;
+    column-gap: 2em;
+    grid-template-columns: 7fr 3fr;
+  }
+
+  a {
+    font: inherit;
     text-decoration: none;
-    display: block;
-    color: black;
-    font-weight: bold;
-    padding-bottom: 0.5em;
-  }
-  .contacts{
-    margin-bottom: 50px;
-
+    color: inherit;
   }
 
-  .resume {
-    padding-top: 100vw;
-    background: white;
+  .resume-title {
+    grid-column-start: 1;
+    /* grid-column-end: 2; */
   }
-
-  /* List styles */
-  .list{
-    margin-bottom: 2em;
+  .resume-contacts {
+    grid-column-start: 2;
+    grid-row-start: 1;
   }
-  .list p{
-    margin-top: 0.4em;
-    font-size: 0.8em;
-    color: var(--light);
+  .resume-contents {
+    grid-column-start: 1;
+    /* grid-column-end: 2; */
+    grid-row-start: 2;
   }
-  .list div:last-of-type{
-    margin-bottom: 7em;
+  .resume-short {
+    grid-column-start: 2;
+    grid-row-start: 2;
   }
-  .list h3{
-    font-size: 1em;
-    font-weight: 500;
+  h3 {
     margin-bottom: 0;
   }
 
-  .reference h3{
-    margin-bottom: 0.5em;
-  }
-
-  /* galetora styles */
-  .galetora h6{
-    text-align: center;
-    margin-top: 5em;
-    font-family: 'Arial';
-    color: var(--galetora);
-  }
-  .galetora h6 a{
-    text-decoration: none;
-    font-weight: 700;
-    padding: 3px 5px;
-    border-radius: 10pt;
-    color: var(--galetora);
-  }
-
-  /* table styles */
-  td{
-    vertical-align: top;
-  }
-  tr td:last-of-type{
-    width: 30%;
-  }
-
-  /* header styles */
-  h1{
-    font-size: 6em;
-    line-height: 1em;
-  }
-  td h1:first-of-type{
-    margin-top: 0;
-  }
-  h2, .header h1{
-    user-select: none;
-    font-size: 1.4em;
-    font-weight: 700;
-    cursor: pointer;
-  }
-  h4{
-    font-weight: 400;
+  h1 {
+    font-size: 5em;
     margin: 0;
-    padding: 0.2em 0;
-  }
-  h5{
-    font-size: 1em;
-    margin: 0.5em 0;
-    font-weight: 400;
-  }
-  div h5:first-of-type{
-    margin-top: 1em;
   }
 
+    .sub-cat {
+      padding-left: 0.5em;
+    }
+
+    /* resume-app {
+      display: flex;
+    } */
 
 
+    .filter-key {
+      cursor: pointer;
+    }
+    .filter-key[selected] {
+      font-weight: bold;
+    }
+    .key-set > h3 {
+      cursor: pointer;
+    }
 
-</style>
+    item, item-view{
+      display: block;
+    }
+
+    item p{
+      margin-top: 0.4em;
+      font-size: 0.8em;
+      color: var(--light);
+    }
+    item div:last-of-type{
+      margin-bottom: 7em;
+    }
+    item h3{
+      font-size: 1em;
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+
+    .reference h3{
+      margin-bottom: 0.5em;
+    }
+
+
+    [editable] item, [editable] .head, [editable] item-view{
+      pointer-events: none;
+      position: relative;
+      padding-left: 3vmax;
+    }
+    [editable] item::after, [editable] .head::after, [editable] item-view::after{
+      position: absolute;
+      top: calc(50% - 1.25vmax);
+      left: 0;
+      width: 2.5vmax;
+      height: 2.5vmax;
+      pointer-events: all;
+      cursor: pointer;
+    }
+    [editable] .head::after {
+      content: url("data:image/svg+xml,%3Csvg viewBox = '0 0 99 99' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d = 'M56.05,56.05h25.86c1.68,0,3.36-.64,4.64-1.92s1.92-2.95,1.92-4.63c0-1.68-.64-3.35-1.92-4.63s-2.96-1.92-4.64-1.92h-25.86c0-13.75,0-25.86,0-25.86,0-1.68-.64-3.36-1.92-4.64s-2.95-1.92-4.63-1.92-3.35,.64-4.63,1.92-1.92,2.96-1.92,4.64c0,0,0,12.11,0,25.86-13.75,0-25.87,0-25.87,0-1.68,0-3.35,.64-4.63,1.92s-1.92,2.95-1.92,4.63c0,1.68,.64,3.35,1.92,4.63s2.95,1.92,4.63,1.92c0,0,12.11,0,25.87,0,0,13.75,0,25.87,0,25.87,0,1.68,.64,3.35,1.92,4.63s2.95,1.92,4.63,1.92c1.68,0,3.35-.64,4.63-1.92s1.92-2.95,1.92-4.63c0,0,0-12.11,0-25.87Z'/%3E%3C/svg%3E ");
+    }
+    [editable] item::after, [editable] item-view::after {
+      right: 0;
+      content: url("data:image/svg+xml,%3Csvg viewBox = '0 0 99 99' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d = 'M81.14,39.55l-47.23,28.19-23.12,4.19,14.66-18.36,47.23-28.19s4.88-.16,7.89,4.9c3.02,5.06,.56,9.27,.56,9.27Z'/%3E%3C/svg%3E ");
+    }
+
+    item-list {
+      display: block;
+      position: relative;
+    }
+
+    item-list[edited]::before, item-view[edited]::before{
+        display: block;
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        content: "";
+        background: orange;
+        width: 10px;
+        height: 10px;
+        /* margin: 10px; */
+        border-radius: 5px;
+      }
+
+
+    .sub {
+      margin-top: 0.5em;
+    }
+  </style>
 </html>

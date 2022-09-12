@@ -1,0 +1,92 @@
+form-editor {
+  --g: 10px;
+  --hidden: 0;
+  transition: 0.3s cubic-bezier(0.4, 0, 0.6, 1) transform;
+
+  display: flex;
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  backdrop-filter: blur(11px);
+  -webkit-backdrop-filter: blur(11px);
+  /* -webkit-backdrop-filter: blur(11px); */
+  padding: var(--g);
+  gap: var(--g);
+  background: #e5efffc7;
+  transform: translate(0, calc(100% * var(--hidden)));
+
+  font-size: 2.5vmax;
+}
+.icons {
+  width: 1em;
+  display: flex;
+  gap: calc(2 * var(--g));
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
+.icons div {
+  display: flex;
+  flex-direction: column;
+  gap: calc(3*var(--g));
+}
+.icons .icon {
+  display: none;
+  fill: #e17319;
+  border-radius: 11%;
+  pointer-events: none;
+}
+.icons .icon.bg {
+  background: #ebdbd0;
+}
+
+.icons .icon[close], form-editor[saveable] .icon[save], form-editor[edit] .icon[delete] {
+  /* opacity: 1;
+  width: auto;
+  height: auto; */
+  display: inherit;
+  pointer-events: all;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+form row {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+form row > i-box:nth-of-type(n+2) {
+  border-left: 1px solid black;
+  padding-left: calc(var(--g) / 2);
+}
+i-box {
+  display: block;
+  position: relative;
+  padding: calc(var(--g) / 3) 0;
+  width: 100%;
+}
+i-box[invalid]:after {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background: red;
+  margin: calc(var(--g) / 3);
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+i-box input {
+  font: inherit;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: transparent;
+  /* font-size: 50px; */
+}
