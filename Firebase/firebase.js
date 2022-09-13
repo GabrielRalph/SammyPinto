@@ -3,7 +3,6 @@ import {getDatabase, child, push, ref, update, get, onValue, onChildAdded, onChi
 import {getAuth, signInWithRedirect, GoogleAuthProvider, onAuthStateChanged, signOut} from 'https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js'
 
 
-
 const CONFIG = {
   apiKey: "AIzaSyDG7HtXuGYku45FGch3fQoy-Nn1t7cUGLc",
   authDomain: "sammy-pinto-ad658.firebaseapp.com",
@@ -42,6 +41,7 @@ export function initializeAuth(){
     if (User != null) {
       uid = User.uid;
       if (uid !== UserUID) {
+        console.log("admin/" + uid);
         let aref = ref(Database, "admin/" + uid)
         let isAdmin = (await get(aref)).val();
         if (isAdmin === null) {

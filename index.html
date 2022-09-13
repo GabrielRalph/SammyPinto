@@ -99,7 +99,7 @@
                 <input name = "link" placeholder = "Link" />
               </row>
               <row>
-                <input name = "roles" placeholder = "Role" />
+                <input name = "role" placeholder = "Role" />
               </row>
             </form>
             <template>
@@ -343,7 +343,7 @@
       position: relative;
     }
 
-    item-list[edited]::before, item-view[edited]::before{
+    [editable] item-list[edited]::before, [editable] item-view[edited]::before{
         display: block;
         position: absolute;
         top: -5px;
@@ -359,6 +359,12 @@
 
     .sub {
       margin-top: 0.5em;
+    }
+
+    @media print {
+      form-editor {
+        display: none;
+      }
     }
   </style>
 </html>
