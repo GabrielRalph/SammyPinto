@@ -60,6 +60,15 @@ class ResumeApp extends SvgPlus {
     })
     this.updateEditable();
     window.onpopstate = () => this.updateEditable();
+
+    let editable = false;
+    window.addEventListener("beforeprint", () => {
+      editable = this.editable;
+      this.editable = false;
+    })
+    window.addEventListener("afterprint", () => {
+      this.editable = editable;
+    })
   }
 
   updateEditable(){
@@ -125,7 +134,7 @@ class ResumeApp extends SvgPlus {
     let keyIcons = [];
     // get set of of all key values (csv)
     let keySet = {};
-    addKeySet(keySet, "role", data.experiences);
+    // addKeySet(keySet, "role", data.experiences);
     addKeySet(keySet, "role", data.projects);
 
     let roles = Object.values(keySet);
