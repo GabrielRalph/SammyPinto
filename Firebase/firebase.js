@@ -30,6 +30,18 @@ export function initializeDatabase(){
   }
 }
 
+async function dataFix() {
+  // let projects = (await get(ref(Database, "resume/projects"))).val();
+  // for (let key in projects) {
+  //   let project = projects[key];
+  //   if ("roles" in project) {
+  //     project.role = project.roles;
+  //     delete project["roles"];
+  //   }
+  // }
+  // set(ref(Database, "resume/projects"), projects);
+}
+
 export function initializeAuth(){
   if (Auth === null) {
     console.log("%cinit-auth", "color: orange");
@@ -48,6 +60,9 @@ export function initializeAuth(){
           await set(aref, false);
         }
         User.isAdmin = isAdmin;
+        if (isAdmin) {
+          dataFix();
+        }
       }
     }
     if (UserUID !== uid) {

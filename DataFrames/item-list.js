@@ -174,6 +174,26 @@ class ItemList extends KeyElement {
     templateEl.remove();
     this.head = this.innerHTML;
     this.clear();
+
+
+  }
+
+
+
+  sortChildren(){
+    if (this.sortMethod instanceof Function) {
+      if (this.sorting) return;
+      this.sorting = true;
+      window.requestAnimationFrame(() => {
+        let items = [...this.items];
+        console.log(items);
+        items.sort(this.sortMethod);
+        for (let item of items) {
+          this.appendChild(item);
+        }
+        this.sorting = false;
+      })
+    }
   }
 
   addItem(data) {
@@ -182,6 +202,7 @@ class ItemList extends KeyElement {
     item.key = this.itemCount;
     this.itemCount++;
     this.appendChild(item);
+    this.sortChildren()
     return item;
   }
 

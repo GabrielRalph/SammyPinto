@@ -4,6 +4,51 @@ import {save, initializeDatabase, initializeAuth, addResumeListener, addUserList
 import {addKeyCommand} from "./key-cmd.js"
 
 
+function getTime(datestr) {
+  let date = new Date();
+
+  if (datestr.toLowerCase() != "present") {
+    datestr = datestr.replace(/(?:\d)th|st|nd/, "");
+    if (datestr.match(/^\d\d\d\d$/)) {
+      datestr = "1 Jan " + datestr;
+    }
+    date = new Date(datestr);
+  }
+  let dstr = (date + "").split(/\d\d:/)[0]
+  console.log(datestr + " -> " + dstr);
+  return date.getTime();
+}
+
+function getTimes(datestr) {
+  let strs = datestr.toLowerCase().split(/\s*-\s*/);
+  let start = getTime(strs[0]);
+  let end = start;
+  if (start.length > 1) {
+    end = getTime(strs[1]);
+  }
+
+  return [start, end];
+}
+
+function sortTimes(a, b) {
+  try {
+    let ad = a.value.date;
+    let bd = b.value.date;
+    if ((!ad && bd) || (!ad && !bd)) return 1;
+    if (!bd && ad) return -1;
+
+    let [as, ae] = getTimes(ad);
+    let [bs, be] = getTimes(bd);
+    if (Math.abs(ae - be) < 1000) {
+      return as > bs ? -1 : 1;
+    }
+
+    return ae > be ? -1 : (as > bs ? -1 : 1);
+  } catch (e) {
+    return -1;
+  }
+}
+
 
 function addKeySet(set, key, list, split = true) {
   for (let lkey in list) {
@@ -35,6 +80,11 @@ class ResumeApp extends SvgPlus {
     this.authbutton = this.querySelector(".sign-in-out");
     this.keysets = new SvgPlus(this.querySelector(".key-sets"));
     this.data = this.querySelector("data-frame");
+
+    let expil = document.querySelector("item-list[key = 'experiences']");
+    expil.sortMethod = sortTimes;
+    let proil = document.querySelector("item-list[key = 'projects']");
+    proil.sortMethod = sortTimes;
 
     this.addEventListener("update", () => {
       console.log("update");
